@@ -1,0 +1,59 @@
+---- SOLUCIONAR ERROR 128 PROXY ----
+
+WARNING: 'git lfs clone' is deprecated and will not be updated with new flags from 'git clone' 
+'git clone' has been updated in upstream Git to have comparable speeds to 'git lfs clone'. Cloning into 
+…. 
+schannel: failed to receive handshake, SSL/TLS connection failed Error(s) during clone: git clone failed: exit status 128
+
+SOLUCIÓN: Abrir GIT consola y ejecutar:
+
+git config --global http.proxy http://<proxy-ip>:<proxy-post>
+
+Ejemplo:
+
+git config --global http.proxy http://172.142.9.7:8080
+
+
+---- GIT COMANDOS ----
+
+git log --graph --decorate --oneline --all //log ;)
+
+git gc //recolector basura
+
+git commit --amend //cambio al ultimo commit NO RECOMENDABLE
+
+git branch //muestra los branch (Ramas)
+
+git checkout -b feat-1 	    //crea una rama branch y se usa
+git checkout -b mejoras-web //crea una rama branch y se usa
+
+git commit -a //guardar todoo y agregar comentario #1 para hacer referencia al issue 1..
+git commit -am "cambio el color por verde" //guardar y escribe sobre la misma linea
+
+git checkout master //volver a master
+
+git merge feat-1 //unir Branch en master
+
+git push origin master     //update
+git push origin mejoras-web//update
+
+git pull origin master //update (lo cambios en web)
+
+git branch -D Index-v2 //DELETE branch (forzar)
+
+---- CERRAR ISSUE X UN COMMIT ----
+
+git add . //en master
+ 
+git commit //Closes #2 --> para cerrar issue desde commit
+
+git push origin master //subir los cambios a la web de GIT ***
+
+
+---- BORRAR , CLONAR Y PULL REQUEST LOCAL ----
+
+rm -rf pagina-web
+
+git clone "url/.git"
+
+
